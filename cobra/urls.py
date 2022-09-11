@@ -18,5 +18,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('cobra_main/', include('cobra_main.urls')),
+    path('accounts/', include('registration.backends.default.urls')),
+    path('usuarios/', include('usuarios.urls')),
     path('admin/', admin.site.urls),
 ]
