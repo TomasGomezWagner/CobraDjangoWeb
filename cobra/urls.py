@@ -17,6 +17,6 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('cobra_main', include('cobra_main.urls')),
+    path('cobra_main/', include('cobra_main.urls')),
     path('admin/', admin.site.urls),
 ]
