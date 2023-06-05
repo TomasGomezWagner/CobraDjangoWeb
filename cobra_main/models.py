@@ -41,7 +41,15 @@ class Producto(models.Model):
 
     producto = models.CharField(max_length=200)
     precio = models.FloatField(blank= True, null= True)
-    estado = models.CharField(max_length=20, choices=APROBACION_PRODUCTO, default='Borrador')
+    estado_producto = models.CharField(max_length=20, choices=APROBACION_PRODUCTO, default='Borrador')
+
+    def estado(self):
+        if self.estado_producto == 'Borrador':
+            return format_html('<span style="color: #146BFF;">{}</span>', self.estado_producto)
+        if self.estado_producto == 'Publicado':
+            return format_html('<span style="color: #0BDE35;">{}</span>', self.estado_producto)
+        if self.estado_producto == 'Retirado':
+            return format_html('<span style="color: #D91A09;">{}</span>', self.estado_producto)
 
     def __str__(self) -> str:
         return self.producto

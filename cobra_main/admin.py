@@ -35,14 +35,14 @@ class ProductoAdmin(admin.ModelAdmin):
             "Datos generales",
             {
                 "fields": [
-                    'producto', 'precio', 'estado'
+                    'producto', 'precio', 'estado_producto'
                 ]
             },
         ),
     ]
     list_display = ['producto', 'precio', 'estado']
     ordering = ['producto']
-    list_filter = ('producto', 'estado')
+    list_filter = ('producto', 'estado_producto')
     inlines = [ProductoInLine]
     
 # admin.site.register(Producto, ProductoAdmin)
